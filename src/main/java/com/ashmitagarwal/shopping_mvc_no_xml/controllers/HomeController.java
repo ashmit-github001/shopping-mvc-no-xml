@@ -13,28 +13,28 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 
 	@ResponseBody
-	@RequestMapping("test")
+	@RequestMapping("/test")
 	public String test() {
 		return "Hello World";
 	}
 	
-	@RequestMapping("")
+	@RequestMapping("/")
 	public String homePage() {
 		return "HomePage";
 	}
 	
-	@GetMapping("userLogin")
+	@GetMapping("/userLogin")
 	public String userLogin() {
 		return "UserLoginPage";
 	}
 	
-	@GetMapping("userRegistration")
+	@GetMapping("/userRegistration")
 	public String userRegistration() {
 		return "UserRegistrationPage";
 	}
 	
 	@ResponseBody
-	@PostMapping("userLogin")
+	@PostMapping("/userLogin")
 	public String userLogin(@RequestParam Map<String,String> userLoginDetails) {
 		String username = userLoginDetails.get("username");
 		String password = userLoginDetails.get("password");
@@ -51,7 +51,7 @@ public class HomeController {
 	}
 	
 	@ResponseBody
-	@PostMapping("userRegistration")
+	@PostMapping("/userRegistration")
 	public String userRegistration(@RequestParam Map<String,String> userRegistrationDetails) {
 		
 		String fname = userRegistrationDetails.get("firstname");
